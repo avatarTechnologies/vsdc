@@ -73,7 +73,7 @@ curl 'https://HOST/CONTEXT/merchant/invoice'
  ```
      
 ### Responses
-**HTTP STATUS Success 200**
+**HTTP/1.1 200 OK**
 
 Field | Type | Description
 ------------ | ------------ | -------------
@@ -91,8 +91,6 @@ invoiceNumber | String | Number of Invoice
 invoiceType | String | Type of Invoice
 verificationUrl | String | URL used to validate ticket against aTax. This field should be used to print QR code
 totalInvoices | Integer | Total number of invoices signed by the V-SDC tenant
-
-**HTTP/1.1 200 OK**
 
 ```
 {
@@ -112,6 +110,7 @@ totalInvoices | Integer | Total number of invoices signed by the V-SDC tenant
      "totalInvoices": 181
 }
 ```
+
 **HTTP/1.1 400 Bad Request**
 
 Field | Type | Description
