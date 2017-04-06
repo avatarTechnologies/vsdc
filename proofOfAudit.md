@@ -40,6 +40,7 @@ Exception found
 **HTTP/1.1 200 OK**
 
 Field | Type | Description
+------------ | ------------- | ------------
 cancel | boolean | TRUE if POA is cancelled
 complete | boolean | TRUE is POA is completed
 mrc | string | device assigne to POA
