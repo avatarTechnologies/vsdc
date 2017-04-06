@@ -18,18 +18,22 @@ The basic POA workflow contains several steps:
 - If POA is not complete SDC must wait. There’s an GET ATAX API endpoint (/poa) to get the status. This additional steps are explained later.
 - If the VERIFY_AUDIT is complete SAM responses SUCCESS. Otherwise and error is thrown.
 
-# Enpoints
-## Create Proof of audit
+## Enpoints
+### Create Proof of audit
+
+`https://HOST/poa`
 
 Endoint | Method | Content | Description
-/poa | POST | byte[] | Contains the SAM card START_AUDIT response
+poa | POST | byte[] | Contains the SAM card START_AUDIT response
 
 ### Responses
 
 **HTTP/1.1 202 Aceppted**
+
 No pending Proof Of Audit
 
 **HTTP/1.1 400 Bad Request**
+
 Exception found
 
 **HTTP/1.1 200 Aceppted**
