@@ -108,7 +108,7 @@ totalInvoices | Integer | Total number of invoices signed by the V-SDC tenant
      "signature": "OC0HbiGJok...",
      "invoiceNumber": "xxxyyy001",
      "invoiceType": "Normal",
-     "verificationUrl": "https://avatar-atax.systemonenoc.com/avatar-public/ticket/verify?tin=00000&date=2015-06-29+06%3A56%3A27+-0400&itype=N&ttype=S&mcr=0000&ino=0000&data=0000&sign=0000&hb=100&mr=18&lr=16&lb=21.55&lt=3.45&zr=32",
+     "verificationUrl": "https://...",
      "totalInvoices": 181
 }
 ```
