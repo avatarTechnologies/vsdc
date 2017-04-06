@@ -29,16 +29,15 @@ poa | POST | byte[] | Contains the SAM card START_AUDIT response
 
 ### Responses
 
-**HTTP/1.1 202 Aceppted**
+**HTTP/1.1 202 Accepted**
 
-No pending Proof Of Audit
+The request has been accepted for processing, but there isn't any pending Proof Of Audit to process.
 
 **HTTP/1.1 400 Bad Request**
 
 Exception found
 
-**HTTP/1.1 200 Accepted**
-The request has been accepted for processing, but the processing has not been completed. 
+**HTTP/1.1 200 OK**
 
 Field | Type | Description
 cancel | boolean | TRUE if POA is cancelled
