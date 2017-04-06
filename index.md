@@ -150,5 +150,6 @@ WRONG TAX
 ```
 
 **HTTP/1.1 401 Unauthorized**
+
 The request has not been applied because it lacks valid authentication credentials for the target resource. Maybe client certificate is missing, invalid o revoked.
 
