@@ -3,7 +3,7 @@
 ## Configuration & Requirements
 - Is mandatory to use valid certificates during communications, server application will validate client certificate against Certificate Authority(CA) during SSL handshake.
 - You will need your merchant/taxpayer account TIN number, please contact system admin to obtain one valid cert. You should use it as param when it's necessary (issuing invoices).
-- There is one method per each enpoint but the main method is 'Invoice - Fiscalize invoice'. This endpoint is used to issue receipts to system, server will validate it against aTAX, sign it and send to aTAX server. This endpoint accepts JSON/XML format as payload. In 'JSON Receipt example' you will find how fields are configured.
+- This endpoint is used to issue receipts to system, server will validate it against aTAX, sign it and send to aTAX server. This endpoint accepts JSON/XML format as payload.
 
 ## Invoice- Fiscalize invoice
 Regular invoice format defines minimum data that has to be signed and submitted to the Tax Authority. Invoice consist of following data.
