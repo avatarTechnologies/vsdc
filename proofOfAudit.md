@@ -37,7 +37,8 @@ No pending Proof Of Audit
 
 Exception found
 
-**HTTP/1.1 200 Aceppted**
+**HTTP/1.1 200 Accepted**
+The request has been accepted for processing, but the processing has not been completed. 
 
 Field | Type | Description
 cancel | boolean | TRUE if POA is cancelled
