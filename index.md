@@ -98,7 +98,8 @@ Where:
 	"lt": 480,
 	"zr": 32,
 	"zb": 4000,
-	"zt": 1280
+	"zt": 1280,
+	"journal": "..."
 }
 ```
 - SERIAL_NUMBER.PEM
