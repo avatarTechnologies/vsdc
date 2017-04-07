@@ -66,12 +66,45 @@ $signature$$: Digital Signature
 
 ### Request example
 ```
-curl 'https://HOST/CONTEXT/merchant/invoice'
-     -X POST
-     -H 'Content-type: application/json'
-     --data '{"tin":"123456789","date":"2014-12-31 21:07:36 -0400","place":"xxx","bid":"000000000000001","ccid":"000000000000001","itype":"Training","ttype":"Sale","mcr":"777777777","ino":"xxxxxxxxxxxxxxx","hr":0,"hb":1000,"ht":0,"mr":18,"mb":2000,"mt":360,"lr":16,"lb":3000,"lt":480,"zr":32,"zb":4000,"zt":1280,"lines":[{"ean":"1234567890180","name":"Test","quantity":1.0,"base":1000.0,"discount":0.0,"code":"A","total":1000.0},{"ean":"1234567890173","name":"Test","quantity":1.0,"base":2000,"discount":0.0,"code":"B","total":2360.0},{"ean":"1234567890166","name":"Test","quantity":1.0,"base":3000,"discount":0.0,"code":"C","total":3480.0},{"ean":"1234567890128","name":"Test","quantity":1.0,"base":4000,"discount":0.0,"code":"D","total":5280.0}]}'
+curl 'https://HOST' \	
+	-X POST \
+	-H 'Content-type: application/json' \
+	--data 'JSON_ENCODED_INVOICE' \
+	-v \
+	--cert SERIAL_NUMBER.PEM:PASS \
+	--cacert CA.PEM
  ```
-     
+Where:
+- JSON_ENCODED_INVOICE
+```
+{
+	"tin": "123456789",
+	"date": "2014-12-31 21:07:36 -0400",
+	"place": "xxx",
+	"bid": "000000000000001",
+	"ccid": "000000000000001",
+	"itype": "Training",
+	"ttype": "Sale",
+	"mcr": "777777777",
+	"ino": "xxxxxxxxxxxxxxx",
+	"hr": 0,
+	"hb": 1000,
+	"ht": 0,
+	"mr": 18,
+	"mb": 2000,
+	"mt": 360,
+	"lr": 16,
+	"lb": 3000,
+	"lt": 480,
+	"zr": 32,
+	"zb": 4000,
+	"zt": 1280
+}
+```
+- SERIAL_NUMBER.PEM
+- PASS
+- CA.PEM
+
 ### Responses
 **HTTP/1.1 200 OK**
 
@@ -119,7 +152,7 @@ success | Boolean | Whether the request was successfully processed or not
 message | String | Any relevant information regarding the received invoice
 errors | String[] | A list of the errors found while processing the received invoice
 
-WRONG TIN
+Wrong tin
 ```
 {
   "success":false,
@@ -129,7 +162,7 @@ WRONG TIN
 }
 ```
 
-WRONG MRC
+Wrong mrc
 ```
 {
     "success": false,
@@ -138,13 +171,33 @@ WRONG MRC
 }
 ```
 
-WRONG TAX
+Wrong tax
 ```
 {
   "success":false,
   "status":null,
   "message":"Tax Rate expected <0.000000> but was <25.000000>",
   "errors":[] 
+}
+```
+
+Journal is missing
+```
+{
+  "success":false,
+  "status":null,
+  "message":"Tax Rate expected <0.000000> but was <25.000000>",
+  "errors":[] 
+}
+```
+
+Tin/Mrc pair is not setup properly
+```
+{
+     "success":false,
+     "status":null,
+     "message":"There was an error with your MCR/TIN  (777777777/123456789) combination. Please try again.",
+     "errors":["There was an error with your MCR/TIN  (777777777/123456789) combination. Please try again."]
 }
 ```
 
