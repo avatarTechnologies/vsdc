@@ -102,9 +102,9 @@ Where:
 	"journal": "..."
 }
 ```
-- SERIAL_NUMBER.PEM
-- PASS
-- CA.PEM
+- SERIAL_NUMBER.PEM, certificate in PEM format
+- PASS, pass phrase used when you extract certificate 
+- CA.PEM, certificate authority in PEM format
 
 ### Responses
 **HTTP/1.1 200 OK**
